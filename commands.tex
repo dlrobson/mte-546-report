@@ -1,0 +1,20 @@
+% shortcut for adding in new figures, works in multicol environment or not
+% use (note the scale factor is optional, defaults to 1, the linewidth)
+% \fig[scale from 0 to 1]{file name}{Figure title}{figure_label}
+\newcommand{\fig}[4][1]{
+    \begin{figure}[htbp]
+        \centerline{\includegraphics[width=#1\linewidth]{#2}}
+        \caption{#3}
+        \label{fig:#4}
+    \end{figure}
+}
+% same thing but ignore the multicol
+\newcommand{\wfig}[4][1]{
+    \begin{figure*}[htbp]
+        \centerline{\includegraphics[width=#1\linewidth]{#2}}
+        \caption{#3}
+        \label{fig:#4}
+    \end{figure*}
+}
+% to then reference a figure do this:
+% \cref{fig:figure_label}
